@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicons  -->
+    <link type="image/png" sizes="16x16" rel="icon" href="./favicon/lock-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="./favicon/lock-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href="./favicon/lock-96.png">
+    <link type="image/png" sizes="120x120" rel="icon" href="./favicon/lock-120.png">
+    <!-- link icons  -->
+    <script src="https://kit.fontawesome.com/3fe635cf31.js" crossorigin="anonymous"></script>
+
+    <title>Secure Payment Gateway</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="payment-box">
+            <h1 class="main-head">🔒 Secure Payment</h1>
+
+            <div class="input-box">
+                <div class="input-label">Card Details</div>
+                <div class="input">
+                    <input type="text" name="cardName" placeholder="Card Holder" required>
+                    <input type="text" name="cardNumber" placeholder="Card Number" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-label">Expiry Details</div>
+                <div class="input">
+                    <input class="sm-w" type="text" name="expiryMonth" placeholder="MM" required>
+                    <input class="sm-w" type="text" name="expiryYear" placeholder="YY" required>
+                </div>
+            </div>
+
+            <div class="button-wrapper">
+                <Button onclick="submit()">Pay <span>$23</span></Button>
+                <Button onclick="cancel()">Cancel</Button>
+            </div>
+        </div>
+    </div>
+
+    <!-- link js -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
