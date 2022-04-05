@@ -1,0 +1,164 @@
+// link font: poppins 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+// link reset.scss 
+@import "reset";
+
+// * colors 
+$fade-white: #eee;
+$white: #ffffff;
+$blue: rgb(66, 66, 212);
+$green: rgb(14, 151, 14);
+$black: #000000;
+$fade-black:#8a8484;
+$shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.144);
+
+
+* {
+    font-family: 'poppins', sans-serif;
+}
+body{
+    overflow: hidden;
+}
+
+//* some ready made classes 
+@mixin dimension($h, $w) {
+    height: $h;
+    width: $w;
+}
+
+@mixin flex($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin head($color, $font) {
+    font-size: $font;
+    color: $color;
+    letter-spacing: 1px;
+}
+
+@mixin p($y, $x) {
+    padding: $y $x;
+}
+
+@mixin m($y, $x) {
+    margin: $y $x;
+}
+@mixin w($width) {
+    width: $width;
+}
+@mixin h($height) {
+    width: $width;
+}
+
+@mixin button($color) {
+    border: none;
+    padding: 10px 20px;
+    background-color: $color;
+    color: $white;
+    letter-spacing: 1px;
+    box-shadow: $shadow;
+    border-radius: 5px;
+    cursor: pointer;
+    @media (max-width:310px) {
+        font-size: 15px;
+        letter-spacing: 0px;
+        padding: 10px 15px;
+    }
+    @media (max-width:235px) {
+        font-size: 15px;
+        letter-spacing: 0px;
+        padding: 10px 8px;
+    }
+
+}
+
+.wrapper {
+    @include flex(row);
+    @include dimension(100vh, 100%);
+    @include p(0px, 15px);
+    background-color: $fade-white;
+    @media (max-width:278px) {
+        @include p(0px,5px);
+    }
+
+    .payment-box {
+        @include p(20px, 20px);
+        max-width: 500px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: $shadow;
+
+        h1 {
+            @include head($black, 30px);
+            @media screen and (max-width:512px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width:307px) {
+                font-size: 18px;
+            }
+        }
+        .input-box{
+            @include m(25px,0px );
+            .input-label{
+                @include head($black, 16px );
+                letter-spacing: 0px;
+                font-weight: bold;
+            }
+            .input{
+                @include flex(row);
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 15px 10px;
+
+                input{
+                    @include p(4px,0px);
+                    border:none;
+                    outline: none;
+                    border-bottom:1px solid $fade-black;
+                    @media (max-width:460px) {
+                        @include w(90%)
+                    }
+                }
+                input:focus{
+                    border-bottom: 1px solid $blue;
+                }
+                .sm-w{
+                    @include w(120px);
+                    @media (max-width:307px) {
+                        @include w(50px)
+                    }
+                }
+            }
+
+        }
+
+        .button-wrapper {
+            @include m(0px, 0px);
+            @include flex(row);
+            gap: 0px 25px;
+            justify-content: flex-start;
+            @media (max-width:300px) {
+                gap: 0px 20px;
+            }
+
+            button:nth-child(1) {
+                @include button($blue)
+            }
+
+            button:nth-child(2) {
+                @include button($green)
+            }
+            button{
+                transition: all 0.2s linear;
+            }
+            button:hover{
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+}
