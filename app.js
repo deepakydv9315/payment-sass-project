@@ -5,5 +5,6 @@ function submit(){
 }
 function cancel(){
     alert("You canceled the order ✅");
+    alert("Must vist again")
     location.reload()
 }
